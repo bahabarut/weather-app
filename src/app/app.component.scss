@@ -1,0 +1,14 @@
+#loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: spin 3s linear infinite; /* Spin animasyonunu ekliyoruz */
+    position: sticky;
+    z-index: 1;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg); /* 360 derece dönmesini sağlıyoruz */
+    }
+}

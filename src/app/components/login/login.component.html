@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-5">
+            <div class="card mt-5">
+                <div class="card-body">
+                    <h5 class="text-center">Login Page</h5>
+                    <hr class="m-1">
+                    <form [formGroup]="loginForm" (ngSubmit)="SignIn()">
+                        <div class="mb-1">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="text" class="form-control form-control-sm" formControlName="email" id="email"
+                                placeholder="Email"
+                                [ngClass]="{'is-invalid': submitted && loginForm.controls['email'].errors}">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control form-control-sm" formControlName="password"
+                                id="password" placeholder="password"
+                                [ngClass]="{'is-invalid': submitted && loginForm.controls['password'].errors}">
+                        </div>
+                        <div>
+                            <button type="submit" class="btn btn-sm btn-primary w-100">Login</button>
+                            <button type="button" [routerLink]="['/signup']" class="btn btn-sm btn-success w-100 mt-2">Go To Sign Up</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

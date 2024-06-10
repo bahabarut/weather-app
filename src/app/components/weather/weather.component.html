@@ -1,0 +1,70 @@
+<div class="container">
+    @if(weatherInfo){
+    <div class="row">
+        <div class="col-12 weather-panel">
+            <div class="row">
+                <div class="col-6">
+                    <h2>{{currentCity}}<br><small>{{GetDateFormatter(weatherInfo.current.dt,1)}}</small></h2>
+                     <p class="h3"><img src="../../../assets/animt/{{weatherInfo.current.weather[0].icon}}.gif" alt=""> {{weatherInfo.current.weather[0].description | upperFirstChar}}</p>
+                </div>
+                <div class="col-6 text-end">
+                    <div class="h1 temperature d-grid">
+                        <span class="temp">{{ToCelsius(weatherInfo.current.temp)}}°C</span>
+                        <span class="fs-4"> <img src="../../../assets/animt/feels.png" width="25" alt=""> {{ToCelsius(weatherInfo.current.feels_like)}}°C</span>
+                        <span class="fs-4"> <img src="../../../assets/animt/humidity.png" width="25" alt=""> {{weatherInfo.current.humidity}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-xs-12">
+                    <ul class="list-inline row forecast flex-nowrap m-2 overflow-auto">
+                         @for (item of weatherInfo.hourly; track $index) {
+                        <li class="col text-center">
+                            <h3 class="m-0">{{GetDateFormatter(item.dt,2)}}</h3>
+                            <p><img class="rounded" src="../../../assets/animt/{{item.weather[0].icon}}.gif" alt=""><br>{{ToCelsius(item.temp)}}°C</p>
+                        </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row d-flex justify-content-center align-items-center h-100 mt-3">
+        <div class="col-12">
+            <div class="card" style="border-radius: 25px;">
+                <div class="card-body p-4">
+                    
+                    <div id="demo3" data-mdb-carousel-init class="carousel slide" data-ride="carousel">
+
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="d-flex justify-content-between text-center overflow-auto">
+                                 @for (item of weatherInfo.daily; track $index) {
+                                    <div class="flex-column">
+                                        <p class="small">
+                                            <strong>{{ToCelsius(item.temp.day)}}°/{{ToCelsius(item.temp.night)}}°</strong>
+                                        </p>
+                                        <i class="fas fa-sun fa-2x mb-3" style="color: #ddd;"></i>
+                                        <img class="rounded" src="../../../assets/animt/{{item.weather[0].icon}}.gif" alt="">
+                                        <p class="mb-0"><strong>{{GetDateFormatter(item.dt,3)}}</strong></p>
+                                    </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    }@else{
+        <div class="row">
+            <div class="alert alert-primary">{{emptyDt}}</div>
+        </div>
+    }
+</div>

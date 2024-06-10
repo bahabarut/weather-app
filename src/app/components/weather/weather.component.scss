@@ -1,0 +1,31 @@
+.weather-panel {
+    background: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(255, 201, 85) 100%);
+    border-radius: 20px;
+    box-shadow: 25px 25px 40px 0px rgba(0, 0, 0, 0.33);
+    color: #000000;
+    overflow: hidden;
+    position: relative;
+
+    small {
+        color: inherit;
+        font-size: 50%;
+    }
+
+    ul.forecast>li {
+        border-top: 1px solid #fff;
+    }
+
+    .temperature {
+        &>span.temp {
+            font-size: 2em;
+        }
+    }
+
+}
+
+.flex-column{
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+    background-color: #80808029;
+}
