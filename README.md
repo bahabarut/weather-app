@@ -1,3 +1,6 @@
+![weather page](https://github.com/bahabarut/weather-app-Angular17/assets/92749875/4aaef98e-4b5d-41f6-8502-39dc7bb189e4)
+![weather page2](https://github.com/bahabarut/weather-app-Angular17/assets/92749875/2d7de1cc-11b8-46a0-981d-d328b5bd2f81)
+
 # WeatherApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.5.
